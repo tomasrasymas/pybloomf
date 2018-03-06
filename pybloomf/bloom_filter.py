@@ -181,31 +181,3 @@ class BloomFilter:
         """
 
         return math.ceil((number_of_items_in_filter*math.log(error_rate)) / math.log(1.0 / math.pow(2.0, math.log(2.0))))
-
-if __name__ == '__main__':
-    class CustomHash(BaseHashFunction):
-        def __init__(self, num_of_filter_bits, num_of_hash_func):
-            super().__init__(num_of_filter_bits, num_of_hash_func)
-
-        def get_indexes(self, element):
-            hash_list = []
-            hash1 = mmh3.hash(element, 0)
-            hash2 = mmh3.hash(element, hash1)
-            for i in range(self.num_of_hash_func):
-                hash_list.append(abs((hash1 + i * hash2 * 2) % self.num_of_filter_bits))
-
-            return hash_list
-
-    bf = BloomFilter(100, 0.01)
-    print(bf)
-
-    bf.set_hash_function(CustomHash(bf.num_of_filter_bits, bf.num_of_hash_functions))
-
-    print(bf.add('tomas'))
-    print(bf.add('jonas'))
-    print(bf.add('petras'))
-
-    print(bf)
-
-    print('tomas' in bf)
-    print('bomas' in bf)
