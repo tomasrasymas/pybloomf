@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='pybloomf',
-    version='0.0.2',
+    version='0.0.4',
     description='Python implementation of Bloom filter algorithm',
     url='https://github.com/tomasrasymas/pybloomf',
     author='Tomas Rasymas',
