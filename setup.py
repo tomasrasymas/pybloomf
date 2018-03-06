@@ -4,7 +4,6 @@ setup(
     name='pybloomf',
     version='0.0.1',
     description='Python implementation of Bloom filter algorithm',
-    long_description=open('README.md').read(),
     url='https://github.com/tomasrasymas/pybloomf',
     author='Tomas Rasymas',
     author_email='tomas.rasymas@gmail.com',
