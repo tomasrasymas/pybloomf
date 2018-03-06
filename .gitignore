@@ -102,5 +102,4 @@ ENV/
 
 # Idea and mac
 .DS_Store
-.idea
 .idea/*
